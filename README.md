@@ -26,27 +26,18 @@ A simple VS Code extension that manages Clawdbot connection status via a status 
 
 ```mermaid
 graph TD
-    A[Game Initialized] --> B[Player X's Turn]
-    B --> C{Cell Clicked?}
-    C -->|Yes| D[Update Game State]
-    D --> E{Win Condition?}
-    E -->|Yes| F[Display Win Message]
-    E -->|No| G{Draw Condition?}
-    G -->|Yes| H[Display Draw Message]
-    G -->|No| I[Switch to Player O]
-    I --> J[AI Makes Move]
-    J --> K[Update Game State]
-    K --> L{Win Condition?}
-    L -->|Yes| M[Display Win Message]
-    L -->|No| N{Draw Condition?}
-    N -->|Yes| O[Display Draw Message]
-    N -->|No| P[Switch to Player X]
-    P --> B
-    F --> Q[Game Over]
-    M --> Q
-    O --> Q
-    Q --> R[Reset Button Available]
-    R --> B
+    A[VS Code] --> B[Claw Extension]
+    B --> C[Status Bar Item]
+    C --> D{Menu Selection}
+    D --> E[Status Command]
+    D --> F[Onboard Command]
+    D --> G[Gateway Command]
+    D --> H[Dashboard Command]
+    E --> I[WSL Terminal]
+    F --> I
+    G --> I
+    H --> I
+    I --> J[openclaw CLI]
 ```
 
 ## Development
