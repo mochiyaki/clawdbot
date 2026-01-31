@@ -3,6 +3,10 @@
 All notable changes to the "clawdbot" extension will be documented in this file.
 
 ## Releases
+- 0.0.5
+  - simple demo added
+- 0.0.4
+  - detection logic updated
 - 0.0.3
   - add changelog and docs
 - 0.0.2

@@ -2,7 +2,7 @@
   "name": "clawdbot",
   "displayName": "clawdbot",
   "description": "Clawdbot connection status manager",
-  "version": "0.0.3",
+  "version": "0.0.5",
 	"publisher": "gguf",
 	"author": {
 		"name": "gguf",

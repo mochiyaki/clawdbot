@@ -2,6 +2,8 @@
 
 A simple VS Code extension that manages Clawdbot connection status via a status bar item.
 
+![screenshot](https://raw.githubusercontent.com/mochiyaki/pigbot/master/demo.gif)
+
 ## Features
 
 - **Status Bar Item**: Shows connection status with three states:
@@ -10,7 +12,7 @@ A simple VS Code extension that manages Clawdbot connection status via a status 
   - `$(check) Clawdbot - Connected to Clawdbot`
 
 - **OS Detection**: Automatically detects the operating system and uses:
-  - `wsl clawdbot status` on Windows
+  - `clawdbot status` on Windows (wsl)
   - `clawdbot status` on other platforms
 
 - **Auto-Connect**: Optional setting to automatically connect on startup (disabled by default)

@@ -54,18 +54,33 @@ async function connect() {
         const platform = os.platform();
         const isWindows = platform === 'win32';
 
-        // Determine command based on OS
-        // const command = isWindows ? 'wsl clawdbot status' : 'clawdbot status';
-        const command = isWindows ? 'clawdbot status' : 'clawdbot status';
-
         // Create or reuse terminal
         if (!terminal) {
-            terminal = vscode.window.createTerminal('Clawdbot');
+            if (isWindows) {
+                terminal = vscode.window.createTerminal({
+                    name: 'Claw',
+                    shellPath: 'wsl.exe',
+                    shellArgs: ['-d', 'Ubuntu']
+                });
+            } else {
+                terminal = vscode.window.createTerminal('Clawdbot');
+            }
         }
 
         // Show terminal and send command
         terminal.show(true); // true = preserve focus
-        terminal.sendText(command);
+        terminal.sendText('clawdbot status');
+
+        // // Determine command based on OS
+        // // const command = isWindows ? 'wsl clawdbot status' : 'clawdbot status';
+        // const command = isWindows ? 'clawdbot status' : 'clawdbot status';
+        // // Create or reuse terminal
+        // if (!terminal) {
+        //     terminal = vscode.window.createTerminal('Clawdbot');
+        // }
+        // // Show terminal and send command
+        // terminal.show(true); // true = preserve focus
+        // terminal.sendText(command);
 
         // Update status to connected
         // statusBarItem.text = '$(check) Clawdbot - Connected to Clawdbot';
