@@ -23,25 +23,6 @@ A simple VS Code extension that manages Clawdbot connection status via a status 
 2. The extension will open a terminal and execute the `clawdbot status` command
 3. To enable auto-connect, go to Settings and enable `Clawdbot: Auto Connect`
 
-
-## Workflow
-
-```mermaid
-graph TD
-    A[VS Code] --> B[Claw Extension]
-    B --> C[Status Bar Item]
-    C --> D{Menu Selection}
-    D --> E[Status Command]
-    D --> F[Onboard Command]
-    D --> G[Gateway Command]
-    D --> H[Dashboard Command]
-    E --> I[WSL Terminal]
-    F --> I
-    G --> I
-    H --> I
-    I --> J[openclaw CLI]
-```
-
 ## Development
 
 1. Install dependencies: `npm install`
